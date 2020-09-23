@@ -23,7 +23,7 @@
 // SC: O(n)
 
 // alternative => with brute
-const firstRecurringNumber = (nums) => {
+// const firstRecurringNumber = (nums) => {
 //     let lowestRecurringIndex = nums.length - 1;
 //     let count = 0;
 
