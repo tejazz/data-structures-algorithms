@@ -53,11 +53,68 @@ class LinkedList {
             currentNode = currentNode.next;
         }
 
-        return flatArray;
+        console.log(flatArray);
     }
 
-    insert(index, value) {
+    // insert(index, value) {
+    //     if (index === 0) {
+    //         this.prepend(value);
+    //         return this.printList();
+    //     }
 
+    //     let currentNode = this.head;
+    //     let insertNode = {
+    //         value,
+    //         next: null,
+    //     };
+    //     let currentIndex = 0;
+
+    //     while (currentNode !== null) {
+    //         if (currentIndex === index - 1) {
+    //             insertNode.next = currentNode.next;
+    //             currentNode.next = insertNode;
+    //         }
+
+    //         currentIndex++;
+    //         currentNode = currentNode.next;
+    //     }
+
+    //     return this.printList();
+    // }
+
+    // Second Approach
+    insert(index, value) {
+        // check params
+        if (index >= this.length) {
+            this.append(value);
+            return this.printList();
+        }
+
+        if (index === 0) {
+            this.prepend(value);
+            return this.printList();
+        }
+
+        const newNode = {
+            value,
+            next: null,
+        };
+        const leader = this.traverseToIndex(index - 1);
+        const holdingPointer = leader.next;
+        leader.next = newNode;
+        newNode.next = holdingPointer;
+        this.length++;
+        return this.printList();
+    }
+
+    traverseToIndex(index) {
+        let counter = 0;
+        let currentNode = this.head;
+        while (counter !== index) {
+            currentNode = currentNode.next;
+            counter++;
+        }
+        return currentNode;
     }
 }
 
@@ -65,4 +122,4 @@ const myLinkedList = new LinkedList(10);
 myLinkedList.append(5);
 myLinkedList.append(16);
 myLinkedList.prepend(1);
-console.log(myLinkedList.printList());
+myLinkedList.insert(3, 50);
