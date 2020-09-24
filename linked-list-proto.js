@@ -126,7 +126,7 @@ class LinkedList {
             preDeleteIndex = this.length - 2;
         }
 
-        if (index === 0) {
+        if (index <= 0) {
             this.head = this.head.next;
             this.length--;
             return this.printList();
