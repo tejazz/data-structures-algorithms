@@ -118,7 +118,21 @@ class LinkedList {
     }
 
     remove(index) {
-        let preDeleteNode = this.traverseToIndex(index - 1);
+        // check params
+        let preDeleteIndex = index - 1;
+
+        // delete the last node
+        if (index >= this.length) {
+            preDeleteIndex = this.length - 2;
+        }
+
+        if (index === 0) {
+            this.head = this.head.next;
+            this.length--;
+            return this.printList();
+        }
+
+        let preDeleteNode = this.traverseToIndex(preDeleteIndex);
         let toDeleteNode = preDeleteNode.next;
 
         preDeleteNode.next = toDeleteNode.next;
@@ -132,4 +146,7 @@ myLinkedList.append(5);
 myLinkedList.append(16);
 myLinkedList.prepend(1);
 myLinkedList.insert(3, 50);
-myLinkedList.remove(2);
+myLinkedList.remove(0);
+myLinkedList.remove(100);
+myLinkedList.remove(222);
+myLinkedList.remove(250);
