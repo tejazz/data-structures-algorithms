@@ -69,7 +69,7 @@ class Stack {
     push(value) {
         let newNode = new Node(value);
 
-        if (this.top === null && this.bottom === null) {
+        if (this.length === 0) {
             this.top = newNode;
             this.bottom = newNode;
             this.length++;
