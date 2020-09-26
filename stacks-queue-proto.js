@@ -242,3 +242,48 @@
 // myQueue.isEmpty();
 
 // console.log(myQueue);
+
+// QUEUE USING STACKS
+
+// class Queue {
+//     constructor() {
+//         this.queue = [];
+//         this.length = 0;
+//     }
+
+//     enqueue(value) {
+//         this.queue.push(value);
+//         this.length++;
+//         return;
+//     }
+
+//     dequeue() {
+//         if (this.length === 0) {
+//             return this.queue;
+//         }
+
+//         let temp = this.queue.reverse();
+//         temp.pop();
+//         this.queue = temp.reverse();
+//         this.length--;
+//         return this.queue;
+//     }
+
+//     peek() {
+//         if (this.length === 0) {
+//             return console.log(null);
+//         }
+
+//         console.log(this.queue(this.length - 1))
+//     }
+// }
+
+// const myQueue = new Queue();
+// myQueue.enqueue('Jay');
+// myQueue.enqueue('Samir');
+// myQueue.enqueue('Pavel');
+// myQueue.enqueue('Xavier');
+// myQueue.dequeue();
+// myQueue.dequeue();
+
+// console.log(myQueue);
