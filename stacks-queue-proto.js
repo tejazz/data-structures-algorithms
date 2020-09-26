@@ -82,6 +82,14 @@ class Stack {
         return this.printStack();
     }
 
+    isEmpty() {
+        if (!this.top) {
+            return console.log(true);
+        }
+
+        return console.log(false);
+    }
+
     printStack() {
         let currentNode = this.top;
         let flatArray = [];
@@ -104,5 +112,6 @@ myStack.push('Google');
 myStack.push('Udemy');
 myStack.pop();
 myStack.peek();
+myStack.isEmpty();
 
 console.log(myStack);
