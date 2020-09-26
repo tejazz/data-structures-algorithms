@@ -110,7 +110,7 @@ class LinkedList {
     traverseToIndex(index) {
         let counter = 0;
         let currentNode = this.head;
-        while (counter !== index) {
+        while (counter < index) {
             currentNode = currentNode.next;
             counter++;
         }
@@ -118,40 +118,41 @@ class LinkedList {
     }
 
     remove(index) {
-        // check params
-        let preDeleteIndex = index - 1;
-
-        // delete the last node
-        if (index >= this.length) {
-            preDeleteIndex = this.length - 2;
-        }
-
         if (index <= 0) {
             this.head = this.head.next;
             this.length--;
             return this.printList();
         }
 
-        let preDeleteNode = this.traverseToIndex(preDeleteIndex);
-        let toDeleteNode = preDeleteNode.next;
+        if (index >= this.length) {
+            let leaderNode = this.traverseToIndex(this.length - 2);
+            leaderNode.next = null;
+            this.length--;
+            return this.printList();
+        }
 
-        preDeleteNode.next = toDeleteNode.next;
+        let leaderNode = this.traverseToIndex(index - 1);
+        let deleteNode = leaderNode.next;
+        leaderNode.next = deleteNode.next;
         this.length--;
         return this.printList();
     }
 
     reverse() {
-        // check for params
+        // for only 1 item in list
         if (!this.head.next) {
             return this.printList();
         }
 
+        // normal cases
+        // (H) 10 -> 16 -> 12 -> (T) 4 -> null
+        // Output: (H) 4 -> 12 -> 16 -> (T) 10 -> null 
         let first = this.head;
         this.tail = this.head;
         let second = first.next;
 
-        while (second) {
-            const temp = second.next;
+        while(second !== null) {
+            let temp = second.next;
             second.next = first;
             first = second;
             second = temp;
@@ -169,4 +170,5 @@ myLinkedList.append(16);
 myLinkedList.prepend(1);
 myLinkedList.insert(3, 50);
 myLinkedList.remove(0);
+// myLinkedList.remove(2);
 myLinkedList.reverse();
