@@ -25,6 +25,62 @@ class Node {
 
 // Naive
 
+// class BinarySearchTree {
+//     constructor() {
+//         this.root = null;
+//     }
+
+//     insert(value) {
+//         const newNode = new Node(value);
+
+//         if (this.root === null) {
+//             return this.root = newNode;
+//         }
+
+//         let currentNode = this.root;
+
+//         while (currentNode !== null) {
+//             if (currentNode.value >= value) {
+//                 if (!currentNode.left) {
+//                     currentNode.left = newNode;
+//                     return currentNode = newNode.left;
+//                 } else {
+//                     currentNode = currentNode.left;
+//                 }
+//             } else {
+//                 if (!currentNode.right) {
+//                     currentNode.right = newNode;
+//                     currentNode = newNode.right;
+//                 } else {
+//                     currentNode = currentNode.right;
+//                 }
+//             }
+//         }
+//     }
+
+//     lookup(value) {
+//         let currentNode = this.root;
+
+//         while (currentNode !== null) {
+//             if (currentNode.value === value) {
+//                 return console.log(currentNode);
+//             }
+
+//             if (currentNode.value > value) {
+//                 currentNode = currentNode.left;
+//             } else {
+//                 currentNode = currentNode.right;
+//             }
+//         }
+
+//         return console.log('No value found');
+//     }
+
+//     remove(value) { }
+// }
+
+// Instructional 
+
 class BinarySearchTree {
     constructor() {
         this.root = null;
@@ -34,24 +90,24 @@ class BinarySearchTree {
         const newNode = new Node(value);
 
         if (this.root === null) {
-            return this.root = newNode;
-        }
+            this.root = newNode;
+        } else {
+            let currentNode = this.root;
 
-        let currentNode = this.root;
-
-        while (currentNode !== null) {
-            if (currentNode.value >= value) {
-                if (!currentNode.left) {
-                    currentNode.left = newNode;
-                    return currentNode = newNode.left;
-                } else {
+            while (true) {
+                if (value <= currentNode.value) {
+                    // Left
+                    if (!currentNode.left) {
+                        currentNode.left = newNode;
+                        return this;
+                    } 
                     currentNode = currentNode.left;
-                }
-            } else {
-                if (!currentNode.right) {
-                    currentNode.right = newNode;
-                    currentNode = newNode.right;
                 } else {
+                    // Right
+                    if (!currentNode.right) {
+                        currentNode.right = newNode;
+                        return this;
+                    } 
                     currentNode = currentNode.right;
                 }
             }
@@ -59,42 +115,28 @@ class BinarySearchTree {
     }
 
     lookup(value) {
+        if (!this.root) {
+            return false;
+        }
+
         let currentNode = this.root;
 
-        while (currentNode !== null) {
-            if (currentNode.value === value) {
-                return console.log(currentNode);
-            }
-
-            if (currentNode.value > value) {
+        while (currentNode) {
+            if (value < currentNode.value) {
                 currentNode = currentNode.left;
-            } else {
+            } else if (value > currentNode.value) {
                 currentNode = currentNode.right;
+            } else {
+                return currentNode;
             }
         }
 
-        return console.log('No value found');
+        return false;
     }
 
-    remove(value) { }
+    remove(value) {
+    }
 }
-
-// Instructional 
-
-// class BinarySearchTree {
-//     constructor() {
-//         this.root = null;
-//     }
-
-//     insert(value) {
-//     }
-
-//     lookup(value) {
-//     }
-
-//     remove(value) {
-//     }
-// }
 
 const tree = new BinarySearchTree();
 console.log('Insert');
