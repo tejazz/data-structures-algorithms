@@ -134,24 +134,83 @@ class BinarySearchTree {
         return false;
     }
 
+    // BEST WAY TO SOLVE THIS
+    // Draw and visualize
     remove(value) {
+        if (!this.root) {
+            return false;
+        }
+
+        let currentNode = this.root;
+        let parentNode = null;
+
+        while (currentNode !== null) {
+            if (currentNode.value > value) {
+                parentNode = currentNode;
+                currentNode = currentNode.left;
+            } else if (currentNode.value < value) {
+                parentNode = currentNode;
+                currentNode = currentNode.right;
+            } else {
+                // we have found the node that matches
+
+                // Condition 1: If node has no children
+                if (!currentNode.left && !currentNode.right) {
+                    parentNode.left.value === value ? parentNode.left = null : parentNode.right = null;
+                    return this;
+                }
+
+                // Condition 2: If node has no right child
+                if (!currentNode.right) {
+                    parentNode.left.value === value ? parentNode.left = currentNode.left : parentNode.right = currentNode.left;
+                    return this;
+                }
+
+                // Condition 3: If node has right child
+                // Condition 3.1: Right child has no left child
+                if (!currentNode.right.left) {
+                    let replacementNode = currentNode.right;
+                    replacementNode.left = currentNode.left;
+                    parentNode.left.value === value ? parentNode.left = replacementNode : parentNode.right = replacementNode;
+                    return this;
+                }
+                // Condition 3.2: Right child has left child
+                let replacementNode = currentNode.right.left;
+                let middleNode = currentNode.right;
+                middleNode.right = replacementNode.right;
+                middleNode.left = replacementNode.left;
+
+                replacementNode.right = middleNode;
+                replacementNode.left = currentNode.left;
+                parentNode.left.value === value ? parentNode.left = replacementNode : parentNode.right = replacementNode;
+                return this;
+            }
+        }
     }
 }
 
 const tree = new BinarySearchTree();
+
 console.log('Insert');
-tree.insert(9);
-tree.insert(4);
-tree.insert(20);
+tree.insert(60);
+tree.insert(30);
 tree.insert(1);
-tree.insert(6);
-tree.insert(15);
-tree.insert(170);
+tree.insert(55);
+tree.insert(38);
+tree.insert(44);
+tree.insert(72);
+tree.insert(78);
+
 console.log('Lookup');
 tree.lookup(4);
 tree.lookup(9);
+
+console.log('Remove');
+// tree.remove(6);
+tree.remove(55);
+
 console.log('Tree Structure');
-console.log(traverse(tree.root));
+console.log(JSON.stringify(traverse(tree.root)));
 
 // TREE EXAMPLE
 //          9
