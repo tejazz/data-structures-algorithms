@@ -1,5 +1,7 @@
 // FACTORIAL OF A NUMBER
 
+// TC: O(n)
+
 function findFactorialRecursive(number) {
     let answer = number;
     if (number > 1) {
@@ -8,7 +10,13 @@ function findFactorialRecursive(number) {
     return answer;
 }
 
+// TC: O(n)
+
 function findFactorialIterative(number) {
+    if (number <= 2) {
+        return number;
+    }
+
     let answer = number;
     for (let i = number - 1; i >= 1; i--) {
         answer *= i;
