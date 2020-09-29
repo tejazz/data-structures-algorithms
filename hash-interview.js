@@ -42,7 +42,7 @@
 // }
 
 // SC: O(1);
-// TC: O(n*2)
+// TC: O(n^2)
 
 // console.log(firstRecurringNumber([2, 5, 1, 2, 3, 5, 1, 2, 4]));
 // console.log(firstRecurringNumber([2, 1, 1, 3, 5, 5, 2, 2, 2, 3, 4, 5]));

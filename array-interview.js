@@ -109,7 +109,7 @@
 //     return sumMax;
 // };
 
-// O(n*2) => Slow
+// O(n^2) => Slow
 
 // Faster alternative
 // var maxSubArray = function (nums) {
