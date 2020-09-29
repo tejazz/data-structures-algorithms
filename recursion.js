@@ -66,6 +66,20 @@
 
 // RECURSION AND SPACE COMPLEXITY ARE NOT FRIENDS
 
+// // Recursion to Reverse String
+
+// //Implement a function that reverses a string using iteration...and then recursion!
+// function reverseString(str) {
+//     if (str.length === 1) {
+//         return str;
+//     }
+    
+//     return str[str.length - 1] + reverseString(str.substring(0, str.length - 1));
+// }
+
+// console.log(reverseString('yoyo mastery'));
+// //should return: 'yretsam oyoy'
+
 // REAL WORLD PROBLEM EXAMPLE
 
 // You find a person who has contracted a given contageous infection, which is non fatal, and fixes itself quickly( Type A) , Except for one in 5 people ( We'll call these type B ) who become permanently infected with it and shows no symptoms and merely acts a spreader.
