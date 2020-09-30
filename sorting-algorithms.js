@@ -118,3 +118,7 @@
 
 // const answer = mergeSort(numbers);
 // console.log(answer);
+
+// Quicksort
+// TC: Best O(n log n), Worst O(n^2)
+// SC: O(1)
