@@ -121,4 +121,15 @@
 
 // Quicksort
 // TC: Best O(n log n), Worst O(n^2)
-// SC: O(1)
+// SC: O(log n)
+
+
+
+// When to use what?
+
+// Insertion Sort: Only a small amount of data and they are mostly sorted
+// Bubble Sort: Only for educational purposes
+// Selection Sort: Only for educational purposes
+// Merge Sort: For non-memory related sorted. Could be used for anything else
+// Quick Sort: Better than merge sort. But has a doosy worst case behaviour
+// Heap Sort: 

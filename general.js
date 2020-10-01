@@ -68,25 +68,125 @@
 
 // Alternative - Optimal Solution
 
-var RecentCounter = function() {
-    this.count = 0;
-    this.requests = [];
+// var RecentCounter = function() {
+//     this.count = 0;
+//     this.requests = [];
+// };
+
+// /** 
+//  * @param {number} t
+//  * @return {number}
+//  */
+// RecentCounter.prototype.ping = function(t) {
+//     this.requests.push(t);
+//     while (t - this.requests[0] > 3000) {
+//         this.requests.shift();
+//     }
+//     return this.requests.length;
+// };
+
+// var recentCounter = new RecentCounter();
+// console.log(recentCounter.ping(1));
+// console.log(recentCounter.ping(100));
+// console.log(recentCounter.ping(3001));
+// console.log(recentCounter.ping(3002));
+
+// EXERCISE 3
+
+// Strong Password Checker
+// https://leetcode.com/problems/strong-password-checker/submissions/
+
+// var strongPasswordChecker = function (s) {
+
+// };
+
+// console.log(strongPasswordChecker('aaaaaaaaaaaaaaaaaaaaa')); // 7
+// console.log(strongPasswordChecker('')); // 6
+// console.log(strongPasswordChecker('aaa123'));   // 1
+// console.log(strongPasswordChecker('1111111111'));   // 3
+// console.log(strongPasswordChecker('1010101010aaaB10101010'));   // 2
+// console.log(strongPasswordChecker('abababababababababaaa'));    // 3
+// console.log(strongPasswordChecker("QQQQQ")); // 2
+// console.log(strongPasswordChecker("aA1")); // 3
+// console.log(strongPasswordChecker("aa123")); // 1
+// console.log(strongPasswordChecker("ABABABABABABABABABAB1")); // 2
+// console.log(strongPasswordChecker("...")); // 3
+// console.log(strongPasswordChecker("1234567890123456Baaaaa")); // 3
+
+// EXERCISE 4
+
+// Running Sum
+
+// var runningSum = function(nums) {
+//     let sumArray = [];
+//     let sum = 0;
+
+//     for (let i = 0; i < nums.length; i ++) {
+//         sumArray.push(sum + nums[i]);
+//         sum += nums[i];
+//     }
+
+//     return sumArray;
+// };
+
+// console.log(runningSum([1, 4, 5, 10]));
+
+// EXERCISE 4
+
+// Kids with Greatest Number of Candies
+// https://leetcode.com/problems/kids-with-the-greatest-number-of-candies/
+
+// var kidsWithCandies = function (candies, extraCandies) {
+//     let maxCandies = 0;
+//     let checkArr = [];
+
+//     for (let i = 0; i < candies.length; i++) {
+//         if (candies[i] > maxCandies) {
+//             maxCandies = candies[i];
+//         }
+//     }
+   
+//     for (let i = 0; i < candies.length; i++) {
+//         checkArr.push(candies[i] + extraCandies >= maxCandies);
+//     }
+
+//     return checkArr;
+// };
+
+// console.log(kidsWithCandies([2, 3, 4, 4, 5], 5));
+
+// EXERCISE 5
+
+// Remove Duplicates in an Array
+// No Extra Space Creation Allowed
+// https://leetcode.com/problems/remove-duplicates-from-sorted-array/solution/
+
+// var removeDuplicates = function(nums) {
+//     let counter = 0;
+//     let previous = null;
+
+//     while (counter < nums.length) {
+//         if (nums[counter] === previous) {
+//             nums.splice(counter, 1);
+//         } else {
+//             previous = nums[counter];
+//             counter++;
+//         }
+//     }
+
+//     return nums;
+// };
+
+// console.log(removeDuplicates([1, 2]));
+
+// EXERCISE 6
+
+// Best Time to Buy and Sell Stocks
+// https://leetcode.com/explore/featured/card/top-interview-questions-easy/92/array/564/
+
+var maxProfit = function(prices) {
+    
 };
 
-/** 
- * @param {number} t
- * @return {number}
- */
-RecentCounter.prototype.ping = function(t) {
-    this.requests.push(t);
-    while (t - this.requests[0] > 3000) {
-        this.requests.shift();
-    }
-    return this.requests.length;
-};
-
-var recentCounter = new RecentCounter();
-console.log(recentCounter.ping(1));
-console.log(recentCounter.ping(100));
-console.log(recentCounter.ping(3001));
-console.log(recentCounter.ping(3002));
+console.log(maxProfit([7,1,5,3,6,4]));
+// Output: 7
