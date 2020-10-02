@@ -91,7 +91,7 @@
 // console.log(recentCounter.ping(3001));
 // console.log(recentCounter.ping(3002));
 
-// EXERCISE 3
+// EXERCISE 3 [UNSOLVED]
 
 // Strong Password Checker
 // https://leetcode.com/problems/strong-password-checker/submissions/
@@ -179,14 +179,32 @@
 
 // console.log(removeDuplicates([1, 2]));
 
-// EXERCISE 6
+// EXERCISE 6 [UNSOLVED]
 
 // Best Time to Buy and Sell Stocks
 // https://leetcode.com/explore/featured/card/top-interview-questions-easy/92/array/564/
 
-var maxProfit = function(prices) {
+// var maxProfit = function(prices) {
     
-};
+// };
 
-console.log(maxProfit([7,1,5,3,6,4]));
+// console.log(maxProfit([7,1,5,3,6,4]));
 // Output: 7
+
+// EXERCISE 7
+
+// Remove Elements
+// https://leetcode.com/problems/remove-element/
+
+// var removeElement = function(nums, val) {
+//     for (let i = 0; i < nums.length; i++) {
+//         if (nums[i] === val) {
+//             nums.splice(i, 1);
+//             i--;
+//         }
+//     }
+
+//     return nums.length;
+// };
+
+// console.log(removeElement([3,2,2,3], 3));
