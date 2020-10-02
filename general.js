@@ -279,3 +279,34 @@
 // }
 
 // console.log(combinationSum([2,3,5], 8)); // [[2,2,2,2],[2,3,3],[3,5]]
+
+// EXERCISE 11
+
+// Non-decreasing Array
+
+// var checkPossibility = function (nums) {
+//     let numberOfChanges = 0;
+
+//     for (let i = 0; i < nums.length - 1; i++) {
+//         if (nums[i] > nums[i + 1]) {
+//             numberOfChanges++;
+//             if (i > 0) {
+//                 if (nums[i - 1] <= nums[i + 1] && nums[i + 2] >= nums[i + 1]) {
+//                     nums[i] = nums[i + 1];
+//                 } else {
+//                     nums[i + 1] = nums[i];
+//                 }
+//             }
+//         }
+//     }
+
+//     return numberOfChanges > 1 ? false : true;
+// };
+
+// console.log(checkPossibility([4, 2, 3]));   // true
+// console.log(checkPossibility([3, 4, 2, 3]));    // false
+// console.log(checkPossibility([5, 1, 7, 8]));    // true
+// console.log(checkPossibility([1, 3, 5, 2, 4])); // false
+// console.log(checkPossibility([-1, 4, 2, 3])); // true
+// console.log(checkPossibility([1, 2, 5, 3, 3])); // true
+// console.log(checkPossibility([-1, 2, 4, 2])); // true
