@@ -250,3 +250,14 @@
 // };
 
 // console.log(findKthLargest([3, 2, 3, 1, 2, 4, 5, 5, 6], 4));
+
+// EXERCISE 10
+
+// Combination Sum
+// https://leetcode.com/explore/challenge/card/october-leetcoding-challenge/559/week-1-october-1st-october-7th/3481/
+
+var combinationSum = function(candidates, target) {
+    
+};
+
+console.log(combinationSum([2,3,5], 8)); // [[2,2,2,2],[2,3,3],[3,5]]
