@@ -251,13 +251,31 @@
 
 // console.log(findKthLargest([3, 2, 3, 1, 2, 4, 5, 5, 6], 4));
 
-// EXERCISE 10
+// EXERCISE 10 [NEED CLARITY]
 
 // Combination Sum
 // https://leetcode.com/explore/challenge/card/october-leetcoding-challenge/559/week-1-october-1st-october-7th/3481/
 
-var combinationSum = function(candidates, target) {
-    
-};
+// var combinationSum = function(candidates, target) {
+//     let results = [];
+//     let temp = candidates;
+//     backtrackArray(results, [], target, temp, index = 0);
+//     return results;
+// };
 
-console.log(combinationSum([2,3,5], 8)); // [[2,2,2,2],[2,3,3],[3,5]]
+// function backtrackArray(results, list, target, temp, index) {
+//     if (target === 0) {
+//         results.push(list);
+//         return;
+//     }
+
+//     if (target < 0) {
+//         return;
+//     }
+
+//     for (let i = index; i < temp.length; i++) {
+//         backtrackArray(results, [...list, temp[i]], target - temp[i], temp, i);
+//     }
+// }
+
+// console.log(combinationSum([2,3,5], 8)); // [[2,2,2,2],[2,3,3],[3,5]]
