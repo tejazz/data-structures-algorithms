@@ -97,8 +97,38 @@
 // https://leetcode.com/problems/strong-password-checker/submissions/
 
 // var strongPasswordChecker = function (s) {
+//     let digitChanges = 0;
+//     let repetitions = 0;
+//     let lengthChnages = 0;
+//     let longestStreak = calculateStreak(s);
 
+//     // for length < 6
+
+//     // for length >= 6 && length <= 20
+
+//     // for length > 20
 // };
+
+// function calculateStreak(s) {
+//     let previous = null;
+//     let streak = 0;
+//     let temp = 1;
+
+//     for (let i = 0; i < s.length; i++) {
+//         if (previous === s[i]) {
+//             temp++;
+//         } else {
+//             if (temp > streak) {
+//                 streak = temp;
+//             }
+//             temp = 1;
+//         }
+
+//         previous = s[i];
+//     }
+
+//     return ls;
+// }
 
 // console.log(strongPasswordChecker('aaaaaaaaaaaaaaaaaaaaa')); // 7
 // console.log(strongPasswordChecker('')); // 6
@@ -131,7 +161,7 @@
 
 // console.log(runningSum([1, 4, 5, 10]));
 
-// EXERCISE 4
+// EXERCISE 5
 
 // Kids with Greatest Number of Candies
 // https://leetcode.com/problems/kids-with-the-greatest-number-of-candies/
@@ -145,7 +175,7 @@
 //             maxCandies = candies[i];
 //         }
 //     }
-   
+
 //     for (let i = 0; i < candies.length; i++) {
 //         checkArr.push(candies[i] + extraCandies >= maxCandies);
 //     }
@@ -155,7 +185,7 @@
 
 // console.log(kidsWithCandies([2, 3, 4, 4, 5], 5));
 
-// EXERCISE 5
+// EXERCISE 6
 
 // Remove Duplicates in an Array
 // No Extra Space Creation Allowed
@@ -179,19 +209,19 @@
 
 // console.log(removeDuplicates([1, 2]));
 
-// EXERCISE 6 [UNSOLVED]
+// EXERCISE 7 [UNSOLVED]
 
 // Best Time to Buy and Sell Stocks
 // https://leetcode.com/explore/featured/card/top-interview-questions-easy/92/array/564/
 
 // var maxProfit = function(prices) {
-    
+
 // };
 
 // console.log(maxProfit([7,1,5,3,6,4]));
 // Output: 7
 
-// EXERCISE 7
+// EXERCISE 8
 
 // Remove Elements
 // https://leetcode.com/problems/remove-element/
@@ -208,3 +238,15 @@
 // };
 
 // console.log(removeElement([3,2,2,3], 3));
+
+// EXERCISE 9
+
+// Kth Largest Number
+// https://leetcode.com/problems/kth-largest-element-in-an-array/
+
+// var findKthLargest = function (nums, k) {
+//     nums = nums.sort((a, b) => b - a);
+//     return nums[k - 1];
+// };
+
+// console.log(findKthLargest([3, 2, 3, 1, 2, 4, 5, 5, 6], 4));
