@@ -310,3 +310,67 @@
 // console.log(checkPossibility([-1, 4, 2, 3])); // true
 // console.log(checkPossibility([1, 2, 5, 3, 3])); // true
 // console.log(checkPossibility([-1, 2, 4, 2])); // true
+
+// EXERCISE 12
+
+// K-Diff Pairs
+// https://leetcode.com/explore/challenge/card/october-leetcoding-challenge/559/week-1-october-1st-october-7th/3482/
+
+// var findPairs = function (nums, k) {
+    // // Brute Force
+    // let len = nums.length;
+    // let pairs = 0;
+    // let sample = [];
+
+    // for (let i = 0; i < len; i++) {
+    //     for (let j = 0; j < len; j++) {
+    //         if (i >= 0 && j < nums.length && i !== j && nums[i] <= nums[j] && (nums[j] - nums[i]) === k) {
+    //             let isExist = sample.findIndex(el => el[0] === nums[i] && el[1] === nums[j]);
+    //             if (isExist === -1) {
+    //                 sample.push([nums[i], nums[j]]);
+    //                 pairs++;
+    //             }
+    //         }
+    //     }
+    // }
+
+    // return pairs;
+
+    // Efficient Solution
+    // TC: O(n), SC: O(n)
+
+//     let len = nums.length;
+//     let mapSet = {};
+//     let pairs = 0;
+
+//     for (let i = 0; i < len; i++) {
+//         if (!mapSet[nums[i]]) {
+//             mapSet[nums[i]] = 1
+//         } else {
+//             mapSet[nums[i]]++;
+//         }
+//     }
+
+//     Object.keys(mapSet).forEach(key => {
+//         if (k > 0) {
+//             if (mapSet[parseInt(key) + k]) {
+//                 pairs++;
+//             }
+//         } else {
+//             if (mapSet[key] >= 2) {
+//                 pairs++;
+//             }
+//         }
+//     });
+
+//     return pairs;
+// };
+
+// console.log(findPairs([3, 1, 4, 1, 5], 2)); // 2
+// console.log(findPairs([1, 2, 3, 4, 5], 1)); // 4
+// console.log(findPairs([1, 3, 1, 5, 4], 0)); // 1
+// console.log(findPairs([1, 2, 4, 4, 3, 3, 0, 9, 2, 3], 3));   // 2
+// console.log(findPairs([-1, -2, -3], 1));  // 2
+// console.log(findPairs([1, 1, 1, 1, 1], 0));  // 1 
+// console.log(findPairs([1, 1, 1, 2, 2], 0));  // 2
+// console.log(findPairs([1, 2, 3], 0));  // 0
