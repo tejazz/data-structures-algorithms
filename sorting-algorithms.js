@@ -132,4 +132,33 @@
 // Selection Sort: Only for educational purposes
 // Merge Sort: For non-memory related sorted. Could be used for anything else
 // Quick Sort: Better than merge sort. But has a doosy worst case behaviour
-// Heap Sort: 
+
+// Non-comparison Sort => Radix and Counting Sort
+// Faster if numbers are within a range
+
+// INTERVIEW QUESTIONS
+
+//#1 - Sort 10 schools around your house by distance:
+// Insertion Sort => Small dataset
+
+//#2 - eBay sorts listings by the current Bid amount:
+// Radix or Counting Sort => Fixed ranges
+
+//#3 - Sport scores on ESPN
+// Quick Sort => Multiple score variations and better space complexity
+
+//#4 - Massive database (can't fit all into memory) needs to sort through past year's user data
+// Merge Sort => Sorting in memory
+
+//#5 - Almost sorted Udemy review data needs to update and add 2 new reviews
+// Insertion Sort => Almost sorted existing data
+
+//#6 - Temperature Records for the past 50 years in Canada
+// Radix or Counting Sort => If no decimal places
+// Quick Sort => If it has decimal places
+
+//#7 - Large user name database needs to be sorted. Data is very random.
+// Quick Sort => Not worried for worst case
+
+//#8 - You want to teach sorting for the first time
+// Bubble or Selection Sort
