@@ -374,3 +374,56 @@
 // console.log(findPairs([1, 1, 1, 1, 1], 0));  // 1 
 // console.log(findPairs([1, 1, 1, 2, 2], 0));  // 2
 // console.log(findPairs([1, 2, 3], 0));  // 0
+
+// EXERCISE 12
+
+// String to Integer (atoi)
+// https://leetcode.com/problems/string-to-integer-atoi/
+
+// var myAtoi = function(s) {
+    // s = s.trim();
+    // let number = '';
+
+    // for (let i = 0; i < s.length; i++) {
+    //     if ((/[-+]/).test(s.charAt(i)) || (/[0-9]/).test(s.charAt(i))) {
+    //         number += s.charAt(i);
+    //     } else {
+    //         break;
+    //     }
+    // }
+
+    // if (!number.trim() || (/[+-]/).test(number.charAt(1)) || isNaN(parseInt(number))) return 0;
+
+    // number = parseInt(number);
+
+    // if (number <= -2147483648) {
+    //     return -2147483648;
+    // } else if (number >= 2147483648) {
+    //     return 2147483648;
+    // }
+
+    // return number;
+// };
+
+// console.log(myAtoi('    -42')); // -42
+// console.log(myAtoi('words and 987')); // 0
+// console.log(myAtoi('4193 with words')); // 4913
+// console.log(myAtoi('-91283472332')); // -2147483648
+// console.log(myAtoi('+-12')); // 0
+// console.log(myAtoi('+')); // 0
+
+// EXERCISE 13
+
+// Valid Number
+// https://leetcode.com/problems/valid-number/submissions/
+
+// var isNumber = function(s) {
+//     if ((/\e\d\.\d/).test(s) || !s.trim()) return false;
+
+//     if (!isNaN(s)) {
+//         return true;
+//     }    
+
+//     return false;
+// };
+
