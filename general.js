@@ -317,27 +317,27 @@
 // https://leetcode.com/explore/challenge/card/october-leetcoding-challenge/559/week-1-october-1st-october-7th/3482/
 
 // var findPairs = function (nums, k) {
-    // // Brute Force
-    // let len = nums.length;
-    // let pairs = 0;
-    // let sample = [];
+// // Brute Force
+// let len = nums.length;
+// let pairs = 0;
+// let sample = [];
 
-    // for (let i = 0; i < len; i++) {
-    //     for (let j = 0; j < len; j++) {
-    //         if (i >= 0 && j < nums.length && i !== j && nums[i] <= nums[j] && (nums[j] - nums[i]) === k) {
-    //             let isExist = sample.findIndex(el => el[0] === nums[i] && el[1] === nums[j]);
-    //             if (isExist === -1) {
-    //                 sample.push([nums[i], nums[j]]);
-    //                 pairs++;
-    //             }
-    //         }
-    //     }
-    // }
+// for (let i = 0; i < len; i++) {
+//     for (let j = 0; j < len; j++) {
+//         if (i >= 0 && j < nums.length && i !== j && nums[i] <= nums[j] && (nums[j] - nums[i]) === k) {
+//             let isExist = sample.findIndex(el => el[0] === nums[i] && el[1] === nums[j]);
+//             if (isExist === -1) {
+//                 sample.push([nums[i], nums[j]]);
+//                 pairs++;
+//             }
+//         }
+//     }
+// }
 
-    // return pairs;
+// return pairs;
 
-    // Efficient Solution
-    // TC: O(n), SC: O(n)
+// Efficient Solution
+// TC: O(n), SC: O(n)
 
 //     let len = nums.length;
 //     let mapSet = {};
@@ -381,28 +381,28 @@
 // https://leetcode.com/problems/string-to-integer-atoi/
 
 // var myAtoi = function(s) {
-    // s = s.trim();
-    // let number = '';
+// s = s.trim();
+// let number = '';
 
-    // for (let i = 0; i < s.length; i++) {
-    //     if ((/[-+]/).test(s.charAt(i)) || (/[0-9]/).test(s.charAt(i))) {
-    //         number += s.charAt(i);
-    //     } else {
-    //         break;
-    //     }
-    // }
+// for (let i = 0; i < s.length; i++) {
+//     if ((/[-+]/).test(s.charAt(i)) || (/[0-9]/).test(s.charAt(i))) {
+//         number += s.charAt(i);
+//     } else {
+//         break;
+//     }
+// }
 
-    // if (!number.trim() || (/[+-]/).test(number.charAt(1)) || isNaN(parseInt(number))) return 0;
+// if (!number.trim() || (/[+-]/).test(number.charAt(1)) || isNaN(parseInt(number))) return 0;
 
-    // number = parseInt(number);
+// number = parseInt(number);
 
-    // if (number <= -2147483648) {
-    //     return -2147483648;
-    // } else if (number >= 2147483648) {
-    //     return 2147483648;
-    // }
+// if (number <= -2147483648) {
+//     return -2147483648;
+// } else if (number >= 2147483648) {
+//     return 2147483648;
+// }
 
-    // return number;
+// return number;
 // };
 
 // console.log(myAtoi('    -42')); // -42
@@ -427,3 +427,59 @@
 //     return false;
 // };
 
+// EXERCISE 14
+
+// Remove Covered Intervals
+// https://leetcode.com/explore/challenge/card/october-leetcoding-challenge/559/week-1-october-1st-october-7th/3483/
+
+// Brute Force
+// var removeCoveredIntervals = function (intervals) {
+//     let coveredIntervals = 0;
+
+//     if (intervals.length === 1) {
+//         return 1;
+//     }
+
+//     for (let i = 0; i < intervals.length; i++) {
+//         let temp = 0;
+
+//         for (let j = 0; j < intervals.length; j++) {
+//             if (intervals[j][0] <= intervals[i][0] && intervals[i][1] <= intervals[j][1] && i != j) {
+//                 temp = 1;        
+//             }
+//         }
+
+//         if (temp === 1) coveredIntervals++;
+//     }
+
+//     return intervals.length - coveredIntervals;
+// };
+
+// // Optimal Solution
+// var removeCoveredIntervals = function (intervals) {
+//     // sort at two levels
+//     // first: start time -> ascending
+//     // second: end time -> descending
+//     intervals.sort((a, b) => a[0] - b[0]);
+//     intervals.sort((a, b) => b[1] - a[1]);
+
+//     let root = intervals[0];
+//     let coveredCount = 0;
+
+//     // loop through
+//     for (let i = 1; i < intervals.length; i++) {
+//         if (intervals[i][0] >= root[0] && intervals[i][1] <= root[1]) {
+//             coveredCount++;
+//         } else {
+//             root = intervals[i];
+//         }
+//     }
+
+//     return intervals.length - coveredCount;
+// }
+
+// console.log(removeCoveredIntervals([[1, 4], [2, 3]])); // 1
+// console.log(removeCoveredIntervals([[1, 4], [3, 6], [2, 8]])); // 2
+// console.log(removeCoveredIntervals([[0, 10], [5, 12]])); // 2
+// console.log(removeCoveredIntervals([[3, 10], [4, 10], [5, 11]])); // 2
+// console.log(removeCoveredIntervals([[34335,39239],[15875,91969],[29673,66453],[53548,69161],[40618,93111]])); // 2
