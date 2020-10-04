@@ -483,3 +483,133 @@
 // console.log(removeCoveredIntervals([[0, 10], [5, 12]])); // 2
 // console.log(removeCoveredIntervals([[3, 10], [4, 10], [5, 11]])); // 2
 // console.log(removeCoveredIntervals([[34335,39239],[15875,91969],[29673,66453],[53548,69161],[40618,93111]])); // 2
+
+// EXERCISE 15
+
+// 3Sum
+// https://leetcode.com/problems/3sum/
+
+
+// // Brute Force => O(n^2) => Too slow
+// var threeSum = function(nums) {
+//     let results = [];
+
+//     if (nums.length < 3) {
+//         return results;
+//     }
+
+//     nums.sort((a, b) => a - b);
+
+//     for (let i = 0; i < nums.length - 2; i++) {
+//         for (let j = i + 1; j < nums.length - 1; j++) {
+//           for (let k = j + 1; k < nums.length; k++) {
+//             if (nums[i] + nums[j] + nums[k] === 0) {
+//                 if (results.findIndex(el => el[0] === nums[i] && el[1] === nums[j] && el[2] === nums[k]) === - 1) {
+//                     results.push([nums[i], nums[j], nums[k]]);
+//                 }
+//             }
+//           }
+//         }
+//     }
+
+//     return results;
+// };
+
+// var threeSum = function (nums) {
+//     // Steps for Optimum Solution
+//     // 1. Sort the array -> Ascending
+//     // 2. Handle edge case
+//     // 3. Iterate through (i)
+//     // 4. Set i+1 as j and end of array as k, navigate accordingly
+//     let results = [];
+
+//     if (nums.length < 3) {
+//         return results;
+//     }
+
+//     nums.sort((a, b) => a - b);
+
+//     for (let i = 0; i < nums.length - 2; i++) {
+//         let j = i + 1;
+//         let k = nums.length - 1;
+
+//         if (nums[i] > 0) {
+//             break;
+//         }
+
+//         if (i > 0 && i === i - 1) {
+//             continue;
+//         }
+
+//         while (j < k) {
+//             let sum = nums[i] + nums[j] + nums[k];
+//             if (sum === 0) {
+//                 if (results.findIndex(el => el[0] === nums[i] && el[1] === nums[j] && el[2] === nums[k]) === - 1) {
+//                     results.push([nums[i], nums[j], nums[k]]);
+//                 }
+//                 while(j < k && nums[j] === nums[j + 1]) j++;
+//                 while(j < k && nums[k] === nums[k - 1]) k--;
+//                 j++;
+//                 k--;
+//             } else if (sum < 0) {
+//                 j++;
+//             } else {
+//                 k--;
+//             }
+//         }
+//     }
+
+//     return results;
+// }
+
+// console.log(threeSum([-1, 0, 1, 2, -1, -4])); // [[-1,-1,2],[-1,0,1]]
+// console.log(threeSum([])); // []
+// console.log(threeSum([0])); // []
+// console.log(threeSum([0, 0, 0, 0])); // [[0,0,0]]
+// console.log(threeSum([3, 0, -2, -1, 1, 2])); // [[-2,-1,3],[-2,0,2],[-1,0,1]]
+
+// EXERCISE 16
+
+// Subarray Sum Equals K
+// https://leetcode.com/problems/subarray-sum-equals-k/
+
+// //Naive O(n^2)
+// var subarraySum = function(nums, k) {
+// let count = 0;
+
+// for (let i = 0; i < nums.length; i++) {
+//     let currentSum = 0;
+//     for (let j = i; j < nums.length; j++) {
+//         currentSum += nums[j];
+
+//         if (currentSum === k) {
+//             count++;
+//         }
+//     }
+// }
+
+// return count;
+// };
+
+// TC: O(n)
+// var subarraySum = function (nums, k) {
+//     let map = { 0: 1 };
+//     let currentSum = 0;
+//     let count = 0;
+
+//     for (let i = 0; i < nums.length; i++) {
+//         currentSum += nums[i];
+//         console.log(currentSum - k);
+
+//         if (map[currentSum - k]) {
+//             count += map[currentSum - k];
+//         }
+
+//         map[currentSum] = map[currentSum] ? map[currentSum] + 1 : 1;
+//     }
+
+//     return count;
+// };
+
+// console.log(subarraySum([1, 1, 1], 2)); // 2
+// console.log(subarraySum([1, 2, 3], 3)); // 2
