@@ -613,3 +613,28 @@
 
 // console.log(subarraySum([1, 1, 1], 2)); // 2
 // console.log(subarraySum([1, 2, 3], 3)); // 2
+
+// EXERCISE 17
+
+// Duplicates (Twice) in an Array
+// https://leetcode.com/problems/find-all-duplicates-in-an-array/
+
+// var findDuplicates = function (nums) {
+//     // 1. Should not increase space
+//     // 2. Space complexity should be O(n)
+//     let results = [];
+
+//     for (let i = 0; i < nums.length; i++) {
+//         let currentNumber = nums[i] < 0 ? nums[i] * -1 : nums[i];
+
+//         if (nums[currentNumber - 1] < 0) {
+//             results.push(currentNumber);
+//         }
+
+//         nums[currentNumber - 1] *= -1;
+//     }
+
+//     return results;
+// };
+
+// console.log(findDuplicates([4, 3, 2, 7, 8, 2, 3, 1])); // [2,3]
