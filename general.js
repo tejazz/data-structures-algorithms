@@ -638,3 +638,35 @@
 // };
 
 // console.log(findDuplicates([4, 3, 2, 7, 8, 2, 3, 1])); // [2,3]
+
+// EXERCISE 18
+
+// Longest Substring Without Repeating Characters
+// https://leetcode.com/problems/longest-substring-without-repeating-characters/
+
+// var lengthOfLongestSubstring = function(s) {
+//     let max = 0;
+//     let temp  = '';
+
+//     for (let i = 0; i < s.length; i++) {
+//       if (temp.includes(s.charAt(i))) {
+//           // extract the text that occures after the common letter was repeated
+//           temp = temp.slice(temp.indexOf(s[i]) + 1) + s[i];
+//       } else {
+//           temp += s[i];
+
+//           if (temp.length > max) {
+//               max = temp.length;
+//           }
+//       }
+//     }
+
+//     return max;
+// };
+
+// console.log(lengthOfLongestSubstring("abcabcbb"));  // 3
+// console.log(lengthOfLongestSubstring("bbbbb"));  // 1
+// console.log(lengthOfLongestSubstring("pwwkew"));  // 3
+// console.log(lengthOfLongestSubstring(""));  // 0
+// console.log(lengthOfLongestSubstring("dvdf"));  // 3
+
