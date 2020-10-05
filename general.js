@@ -670,3 +670,15 @@
 // console.log(lengthOfLongestSubstring(""));  // 0
 // console.log(lengthOfLongestSubstring("dvdf"));  // 3
 
+// EXERCISE 19
+
+// Bitwise Complement
+// https://leetcode.com/explore/challenge/card/october-leetcoding-challenge/559/week-1-october-1st-october-7th/3484/
+
+var bitwiseComplement = function(N) {
+    
+};
+
+console.log(bitwiseComplement(5)); // 2 
+console.log(bitwiseComplement(7)); // 0 
+console.log(bitwiseComplement(10)); // 5 
