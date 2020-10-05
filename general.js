@@ -675,10 +675,59 @@
 // Bitwise Complement
 // https://leetcode.com/explore/challenge/card/october-leetcoding-challenge/559/week-1-october-1st-october-7th/3484/
 
-var bitwiseComplement = function(N) {
+// var bitwiseComplement = function (N) {
+//     if (N === 0) {
+//         return 1;
+//     } else if (N=== 1) {
+//         return 0;
+//     }
     
-};
+//     let binary = getBinaryForm(N);
+//     let complement = '';
 
-console.log(bitwiseComplement(5)); // 2 
-console.log(bitwiseComplement(7)); // 0 
-console.log(bitwiseComplement(10)); // 5 
+//     for (let i = 0; i < binary.length; i++) {
+//         complement += binary[i] === '1' ? '0' : '1';
+//     }
+
+//     return toDecimal(complement);
+// };
+
+// function getBinaryForm(num) {
+//     let binary = '';
+
+//     while (num >= 1) {
+//         binary = (num % 2) + binary;
+//         num = Math.floor(num / 2);
+//     }
+
+//     return binary;
+// }
+
+// function toDecimal(n) {
+//     let highPow = n.length - 1;
+//     let final = 0;
+
+//     for (let i = 0; i < n.length; i++) {
+//         final += Math.pow(2, highPow) * parseInt(n[i]);
+//         highPow--;
+//     }
+
+//     return final;
+// }
+
+// //Way Optimal Solution
+
+// var bitwiseComplement = function(N) {
+//     const base = N.toString(2);
+//     let res = '';
+
+//     for (let i = 0; i < base.length; i++) {
+//         res += base[i] === '1' ? '0' : '1';
+//     }
+
+//     return parseInt(res, 2);
+// }
+
+// console.log(bitwiseComplement(5)); // 2 
+// console.log(bitwiseComplement(7)); // 0 
+// console.log(bitwiseComplement(10)); // 5 
