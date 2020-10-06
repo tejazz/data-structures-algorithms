@@ -681,7 +681,7 @@
 //     } else if (N=== 1) {
 //         return 0;
 //     }
-    
+
 //     let binary = getBinaryForm(N);
 //     let complement = '';
 
@@ -731,3 +731,51 @@
 // console.log(bitwiseComplement(5)); // 2 
 // console.log(bitwiseComplement(7)); // 0 
 // console.log(bitwiseComplement(10)); // 5 
+
+// EXERCISE 21
+
+// Insert into a BST
+// https://leetcode.com/explore/challenge/card/october-leetcoding-challenge/559/week-1-october-1st-october-7th/3485/
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @param {number} val
+ * @return {TreeNode}
+ */
+// var insertIntoBST = function (root, val) {
+
+//     let newNode = new TreeNode(val);
+
+//     if (!root) return root = newNode;
+//     let currentNode = root;
+
+//     while (currentNode) {
+//         if (val <= currentNode.val) {
+//             // Left
+//             if (!currentNode.left) {
+//                 currentNode.left = newNode;
+//                 break;
+//             }
+//             currentNode = currentNode.left;
+//         } else {
+//             // Right
+//             if (!currentNode.right) {
+//                 currentNode.right = newNode;
+//                 break;
+//             }
+//             currentNode = currentNode.right;
+//         }
+//     }
+
+//     return root;
+
+// };
+
