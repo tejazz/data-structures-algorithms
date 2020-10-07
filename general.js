@@ -869,6 +869,8 @@
 // Validate BST
 // https://leetcode.com/problems/validate-binary-search-tree/
 
+// //TC: O(n) => Since we visit each node exactly once
+
 // var isValidBST = function(root) {
 //     return validate(root, null, null);
 // };
