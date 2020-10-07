@@ -779,3 +779,109 @@
 
 // };
 
+// EXERCISE 22
+
+// Rotate a List
+
+// //Brute Force
+// var rotateRight = function(head, k) {
+//     if (!head) return head;
+    
+//     if (!head.next) return head;
+    
+//     let tail = head;
+//     let len = 1;
+    
+//     // find length
+//     while (tail.next !== null) {
+//         len++;
+//         tail = tail.next;
+//     }
+    
+//     for (let i = 0; i < k; i++) {
+//         let preHead = traverseToIndex(head, len - 2);
+    
+//         tail.next = head;
+//         preHead.next = null;
+//         head = tail;
+//         tail = preHead;
+//     }
+    
+//     return head;
+// };
+
+// function traverseToIndex(head, traverse) {
+//     let count = 0;
+//     let currentNode = head;
+//     while (count < traverse) {
+//         count++;
+//         currentNode = currentNode.next;
+//     }
+    
+//     return currentNode;
+// }
+
+// //Optimal Solution
+// var rotateRight = function(head, k) {
+//     if (!head) return head;
+//     if (!head.next) return head;
+    
+//     let tail = head;
+//     let len = 1;
+    
+//     // find length
+//     while (tail.next !== null) {
+//         len++;
+//         tail = tail.next;
+//     }
+    
+//     k = k % len;
+    
+//     if (k === 0) return head;
+    
+//     let newHead = traverseToIndex(head, len - k);
+//     let preHead = traverseToIndex(head, len - k - 1);
+    
+//     console.log(newHead);
+//     console.log(preHead);
+//     console.log(k, len)
+    
+//     tail.next = head;
+//     preHead.next = null;
+//     head = newHead;
+    
+//     return head;
+// };
+
+// function traverseToIndex(head, traverse) {
+//     let count = 0;
+//     let currentNode = head;
+//     while (count < traverse) {
+//         count++;
+//         currentNode = currentNode.next;
+//     }
+    
+//     return currentNode;
+// }
+
+// EXERCISE 23
+
+// Validate BST
+// https://leetcode.com/problems/validate-binary-search-tree/
+
+// var isValidBST = function(root) {
+//     return validate(root, null, null);
+// };
+
+// function validate(root, max, min) {
+//     // 1. If root is null, that means we traversed the entire tree
+//     // 2. Check for violations
+//     // 3. Check each subtree is valid
+//     if (root === null) {
+//         return true;
+//     } else if (max !== null && max <= root.val || min !== null && min >= root.val) {
+//         return false;
+//     } else {
+//         return validate(root.left, root.val, min) && validate(root.right, max, root.val);
+//     }
+// }
