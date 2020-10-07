@@ -893,7 +893,7 @@
 // Longest Valid Parentheses
 // https://leetcode.com/problems/longest-valid-parentheses/
 
-// O(n)
+// TC: O(n)
 // var longestValidParentheses = function(s) {
 //     let open = 0;
 //     let close = 0;
@@ -943,4 +943,38 @@
 // console.log(longestValidParentheses(''));           // 0 
 // console.log(longestValidParentheses(')()())'));     // 4
 // console.log(longestValidParentheses('(()))())('));     // 4
+
+// EXERCISE 25
+
+// Kth Smallest Element in BST
+// https://leetcode.com/problems/kth-smallest-element-in-a-bst/solution/
+
+// TC: O(n) + O(nlog n)
+// var kthSmallest = function(root, k) {
+//     let list = [];
+//     let queue = [];
+    
+//     if (!root) return 0;
+    
+//     let currentNode = root;
+    
+//     queue.push(currentNode);
+    
+//     while (queue.length > 0) {
+//         currentNode = queue.shift();
+//         list.push(currentNode.val);
+        
+//         if (currentNode.left !== null) {
+//             queue.push(currentNode.left);
+//         }
+        
+//          if (currentNode.right !== null) {
+//             queue.push(currentNode.right);
+//         }
+//     }
+    
+//     list.sort((a, b) => a - b);
+    
+//     return list[k - 1];
+// };
 
