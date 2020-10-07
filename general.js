@@ -887,3 +887,60 @@
 //         return validate(root.left, root.val, min) && validate(root.right, max, root.val);
 //     }
 // }
+
+// EXERCISE 24
+
+// Longest Valid Parentheses
+// https://leetcode.com/problems/longest-valid-parentheses/
+
+// O(n)
+// var longestValidParentheses = function(s) {
+//     let open = 0;
+//     let close = 0;
+//     let maxLength = 0;
+
+//     for (let i = 0; i < s.length; i++) {
+//         if (s[i] === '(') {
+//             open++;
+//         } else {
+//             close++;
+//         }
+
+//         if (open === close) {
+//             maxLength = Math.max(maxLength, open + close);
+//         } 
+
+//         if (close > open) {
+//             open = 0;
+//             close = 0;
+//         }
+//     }
+
+//     open = 0;
+//     close = 0;
+
+//     for (let i = s.length - 1; i >= 0; i--) {
+//         if (s[i] === '(') {
+//             open++;
+//         } else {
+//             close++;
+//         }
+
+//         if (open === close) {
+//             maxLength = Math.max(maxLength, open + close);
+//         } 
+
+//         if (open > close) {
+//             open = 0;
+//             close = 0;
+//         }
+//     }
+
+//     return maxLength;
+// };
+
+// console.log(longestValidParentheses('(()'));        // 2
+// console.log(longestValidParentheses(''));           // 0 
+// console.log(longestValidParentheses(')()())'));     // 4
+// console.log(longestValidParentheses('(()))())('));     // 4
+
