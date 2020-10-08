@@ -681,7 +681,7 @@
 //     } else if (N=== 1) {
 //         return 0;
 //     }
-    
+
 //     let binary = getBinaryForm(N);
 //     let complement = '';
 
@@ -749,7 +749,7 @@
 
 // EXERCISE 21
 
-// Insert into a Binary Search Tree
+// Insert into a BST
 // https://leetcode.com/explore/challenge/card/october-leetcoding-challenge/559/week-1-october-1st-october-7th/3485/
 
 /**
@@ -765,76 +765,231 @@
  * @param {number} val
  * @return {TreeNode}
  */
-var insertIntoBST = function(root, val) {
-    let tree = new BinaryTree();
-    for (let i = 0; i < root.length; i++) {
-        tree.insert(root[i]);
-    }
+// var insertIntoBST = function (root, val) {
 
-    tree.insert(val);
+//     let newNode = new TreeNode(val);
 
-    return tree.traverse();
-};
+//     if (!root) return root = newNode;
+//     let currentNode = root;
 
-class BinaryTree {
-    constructor() {
-        this.root = null;
-    }
+//     while (currentNode) {
+//         if (val <= currentNode.val) {
+//             // Left
+//             if (!currentNode.left) {
+//                 currentNode.left = newNode;
+//                 break;
+//             }
+//             currentNode = currentNode.left;
+//         } else {
+//             // Right
+//             if (!currentNode.right) {
+//                 currentNode.right = newNode;
+//                 break;
+//             }
+//             currentNode = currentNode.right;
+//         }
+//     }
 
-    insert(value) {
-        if (!value) return this;
+//     return root;
+
+// };
+
+// EXERCISE 22
+
+// Rotate a List
+
+// //Brute Force
+// var rotateRight = function(head, k) {
+//     if (!head) return head;
+    
+//     if (!head.next) return head;
+    
+//     let tail = head;
+//     let len = 1;
+    
+//     // find length
+//     while (tail.next !== null) {
+//         len++;
+//         tail = tail.next;
+//     }
+    
+//     for (let i = 0; i < k; i++) {
+//         let preHead = traverseToIndex(head, len - 2);
+    
+//         tail.next = head;
+//         preHead.next = null;
+//         head = tail;
+//         tail = preHead;
+//     }
+    
+//     return head;
+// };
+
+// function traverseToIndex(head, traverse) {
+//     let count = 0;
+//     let currentNode = head;
+//     while (count < traverse) {
+//         count++;
+//         currentNode = currentNode.next;
+//     }
+    
+//     return currentNode;
+// }
+
+// //Optimal Solution
+// var rotateRight = function(head, k) {
+//     if (!head) return head;
+//     if (!head.next) return head;
+    
+//     let tail = head;
+//     let len = 1;
+    
+//     // find length
+//     while (tail.next !== null) {
+//         len++;
+//         tail = tail.next;
+//     }
+    
+//     k = k % len;
+    
+//     if (k === 0) return head;
+    
+//     let newHead = traverseToIndex(head, len - k);
+//     let preHead = traverseToIndex(head, len - k - 1);
+    
+//     console.log(newHead);
+//     console.log(preHead);
+//     console.log(k, len)
+    
+//     tail.next = head;
+//     preHead.next = null;
+//     head = newHead;
+    
+//     return head;
+// };
+
+// function traverseToIndex(head, traverse) {
+//     let count = 0;
+//     let currentNode = head;
+//     while (count < traverse) {
+//         count++;
+//         currentNode = currentNode.next;
+//     }
+    
+//     return currentNode;
+// }
+
+// EXERCISE 23
+
+// Validate BST
+// https://leetcode.com/problems/validate-binary-search-tree/
+
+// //TC: O(n) => Since we visit each node exactly once
+
+// var isValidBST = function(root) {
+//     return validate(root, null, null);
+// };
+
+// function validate(root, max, min) {
+//     // 1. If root is null, that means we traversed the entire tree
+//     // 2. Check for violations
+//     // 3. Check each subtree is valid
+//     if (root === null) {
+//         return true;
+//     } else if (max !== null && max <= root.val || min !== null && min >= root.val) {
+//         return false;
+//     } else {
+//         return validate(root.left, root.val, min) && validate(root.right, max, root.val);
+//     }
+// }
+
+// EXERCISE 24
+
+// Longest Valid Parentheses
+// https://leetcode.com/problems/longest-valid-parentheses/
+
+// TC: O(n)
+// var longestValidParentheses = function(s) {
+//     let open = 0;
+//     let close = 0;
+//     let maxLength = 0;
+
+//     for (let i = 0; i < s.length; i++) {
+//         if (s[i] === '(') {
+//             open++;
+//         } else {
+//             close++;
+//         }
+
+//         if (open === close) {
+//             maxLength = Math.max(maxLength, open + close);
+//         } 
+
+//         if (close > open) {
+//             open = 0;
+//             close = 0;
+//         }
+//     }
+
+//     open = 0;
+//     close = 0;
+
+//     for (let i = s.length - 1; i >= 0; i--) {
+//         if (s[i] === '(') {
+//             open++;
+//         } else {
+//             close++;
+//         }
+
+//         if (open === close) {
+//             maxLength = Math.max(maxLength, open + close);
+//         } 
+
+//         if (open > close) {
+//             open = 0;
+//             close = 0;
+//         }
+//     }
+
+//     return maxLength;
+// };
+
+// console.log(longestValidParentheses('(()'));        // 2
+// console.log(longestValidParentheses(''));           // 0 
+// console.log(longestValidParentheses(')()())'));     // 4
+// console.log(longestValidParentheses('(()))())('));     // 4
+
+// EXERCISE 25
+
+// Kth Smallest Element in BST
+// https://leetcode.com/problems/kth-smallest-element-in-a-bst/solution/
+
+// TC: O(n) + O(nlog n)
+// var kthSmallest = function(root, k) {
+//     let list = [];
+//     let queue = [];
+    
+//     if (!root) return 0;
+    
+//     let currentNode = root;
+    
+//     queue.push(currentNode);
+    
+//     while (queue.length > 0) {
+//         currentNode = queue.shift();
+//         list.push(currentNode.val);
         
-        let newNode = {
-            value,
-            left: null,
-            right: null,
-        };
+//         if (currentNode.left !== null) {
+//             queue.push(currentNode.left);
+//         }
+        
+//          if (currentNode.right !== null) {
+//             queue.push(currentNode.right);
+//         }
+//     }
+    
+//     list.sort((a, b) => a - b);
+    
+//     return list[k - 1];
+// };
 
-        if (this.root === null) return this.root = newNode;
-
-        let currentNode = this.root;
-
-        while (true) {
-            if (value <= currentNode.value) {
-                if (!currentNode.left) {
-                    currentNode.left = newNode;
-                    return this;
-                }
-
-                currentNode = currentNode.left;
-            } else {
-                if (!currentNode.right) {
-                    currentNode.right = newNode;
-                    return this;
-                }
-
-                currentNode = currentNode.right;
-            }
-        }
-    }
-
-    traverse() {
-        let currentNode = this.root;
-        let list = [];
-        let queue = [];
-        queue.push(this.root);
-
-        while (queue.length > 0) {
-            currentNode = queue.shift();
-            list.push(currentNode.value);
-
-            if (currentNode.left) {
-                queue.push(currentNode.left);
-            }
-            if (currentNode.right) {
-                queue.push(currentNode.right);
-            }
-        }
-
-        return list;
-    }
-}
-
-console.log(insertIntoBST([40,20,60,10,30,50,70], 25)); // [40,20,60,10,30,50,70,null,null,25]
-console.log(insertIntoBST([4,2,7,1,3,null,null,null,null,null,null], 5));   // [4,2,7,1,3,5]
-console.log(insertIntoBST([4,2,7,1,3], 5));   // [4,2,7,1,3,5]
