@@ -731,3 +731,110 @@
 // console.log(bitwiseComplement(5)); // 2 
 // console.log(bitwiseComplement(7)); // 0 
 // console.log(bitwiseComplement(10)); // 5 
+
+// EXERCISE 20  [UNSOLVED]
+
+// Longest Palindromic Substring
+// https://leetcode.com/problems/longest-palindromic-substring/
+
+// var longestPalindrome = function(s) {
+    
+// };
+
+// console.log(longestPalindrome('babad'));    // bab
+// console.log(longestPalindrome('cbbd'));    // bb
+// console.log(longestPalindrome('a'));    // a
+// console.log(longestPalindrome('ac'));    // a
+// console.log(longestPalindrome('ccc'));  // ccc 
+
+// EXERCISE 21
+
+// Insert into a Binary Search Tree
+// https://leetcode.com/explore/challenge/card/october-leetcoding-challenge/559/week-1-october-1st-october-7th/3485/
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @param {number} val
+ * @return {TreeNode}
+ */
+var insertIntoBST = function(root, val) {
+    let tree = new BinaryTree();
+    for (let i = 0; i < root.length; i++) {
+        tree.insert(root[i]);
+    }
+
+    tree.insert(val);
+
+    return tree.traverse();
+};
+
+class BinaryTree {
+    constructor() {
+        this.root = null;
+    }
+
+    insert(value) {
+        if (!value) return this;
+        
+        let newNode = {
+            value,
+            left: null,
+            right: null,
+        };
+
+        if (this.root === null) return this.root = newNode;
+
+        let currentNode = this.root;
+
+        while (true) {
+            if (value <= currentNode.value) {
+                if (!currentNode.left) {
+                    currentNode.left = newNode;
+                    return this;
+                }
+
+                currentNode = currentNode.left;
+            } else {
+                if (!currentNode.right) {
+                    currentNode.right = newNode;
+                    return this;
+                }
+
+                currentNode = currentNode.right;
+            }
+        }
+    }
+
+    traverse() {
+        let currentNode = this.root;
+        let list = [];
+        let queue = [];
+        queue.push(this.root);
+
+        while (queue.length > 0) {
+            currentNode = queue.shift();
+            list.push(currentNode.value);
+
+            if (currentNode.left) {
+                queue.push(currentNode.left);
+            }
+            if (currentNode.right) {
+                queue.push(currentNode.right);
+            }
+        }
+
+        return list;
+    }
+}
+
+console.log(insertIntoBST([40,20,60,10,30,50,70], 25)); // [40,20,60,10,30,50,70,null,null,25]
+console.log(insertIntoBST([4,2,7,1,3,null,null,null,null,null,null], 5));   // [4,2,7,1,3,5]
+console.log(insertIntoBST([4,2,7,1,3], 5));   // [4,2,7,1,3,5]

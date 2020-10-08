@@ -1,8 +1,8 @@
 // Amazon Questions
 
-// 1. Two Sum: https://leetcode.com/problems/two-sum
+// 1. Two Sum: https://leetcode.com/problems/two-sum (A)
 // 2. Add Two Numbers: https://leetcode.com/problems/add-two-numbers
-// 3. Longest Substring Without Repeating Characters: https://leetcode.com/problems/longest-substring-without-repeating-characters
+// 3. Longest Substring Without Repeating Characters: https://leetcode.com/problems/longest-substring-without-repeating-characters (A)
 // 4. Number of Islands: https://leetcode.com/problems/number-of-islands
 // 5. Longest Palindromic Substring: https://leetcode.com/problems/longest-palindromic-substring
 // 6. Valid Parentheses: https://leetcode.com/problems/valid-parentheses
