@@ -14,3 +14,16 @@ var maxProfit = function(prices) {
     
     return maxProfit;
 };
+
+// TC: O(n)
+var maxProfit = function(prices) {
+    let maxProfit = 0;
+    let minimumCost = prices[0];
+    
+    for (let i = 0; i < prices.length; i++) {
+        minimumCost = Math.min(minimumCost, prices[i]);
+        maxProfit = Math.max(maxProfit, prices[i] - minimumCost);
+    }
+    
+    return maxProfit;
+};
