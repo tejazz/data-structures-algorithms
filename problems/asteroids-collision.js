@@ -16,11 +16,20 @@
 // };
 
 // Stack Approach
-var asteroidCollision = function(asteroids) {
+var asteroidCollision = function (asteroids) {
+    let stack = [];
 
+    for (let i = 0; i < asteroids.length; i++) {
+      
+    }
+
+    return stack;
 }
 
-console.log(asteroidCollision([-2,-1,1,2]));    // [-2,-1,1,2]
+console.log(asteroidCollision([-2, -1, 1, 2]));    // [-2,-1,1,2]
 console.log(asteroidCollision([5, 10, -5]));    // [5, 10]
-// console.log(asteroidCollision([10,2,-5]));  // [10]
-// console.log(asteroidCollision([-2,2,-1,-2]));  // [-2]
+console.log(asteroidCollision([10, 2, -5]));  // [10]
+console.log(asteroidCollision([-2, 2, -1, -2]));  // [-2]
+console.log(asteroidCollision([-2, -2, -1, -2]));  // [-2,-2,-1,-2]
+console.log(asteroidCollision([2, -2]));  // []
+console.log(asteroidCollision([2, 2, 1, 2]));  // [2,2,1, 2]
