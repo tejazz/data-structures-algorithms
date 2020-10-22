@@ -20,7 +20,24 @@ var asteroidCollision = function (asteroids) {
     let stack = [];
 
     for (let i = 0; i < asteroids.length; i++) {
-      
+        if (stack.length === 0 || asteroids[i] > 0) {
+            stack.push(asteroids[i]);
+        } else {
+            while (true) {
+                let peek = stack[stack.length - 1];
+                if (peek < 0 || !peek) {
+                    stack.push(asteroids[i]);
+                    break;
+                } else if (peek === (-1 * asteroids[i])) {
+                    stack.pop();
+                    break;
+                } else if (peek < (-1 * asteroids[i])) {
+                    stack.pop();
+                } else if (peek > (-1 * asteroids[i])) {
+                    break;
+                }
+            }
+        }
     }
 
     return stack;
@@ -32,4 +49,4 @@ console.log(asteroidCollision([10, 2, -5]));  // [10]
 console.log(asteroidCollision([-2, 2, -1, -2]));  // [-2]
 console.log(asteroidCollision([-2, -2, -1, -2]));  // [-2,-2,-1,-2]
 console.log(asteroidCollision([2, -2]));  // []
-console.log(asteroidCollision([2, 2, 1, 2]));  // [2,2,1, 2]
+console.log(asteroidCollision([1,-2,-2,-2]));  // [-2,-2,-2]
