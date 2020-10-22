@@ -17,13 +17,7 @@
 
 // Stack Approach
 var asteroidCollision = function (asteroids) {
-    let stack = [];
 
-    for (let i = 0; i < asteroids.length; i++) {
-      
-    }
-
-    return stack;
 }
 
 console.log(asteroidCollision([-2, -1, 1, 2]));    // [-2,-1,1,2]
