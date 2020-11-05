@@ -5,6 +5,7 @@
 // 3. Remove Duplicate Letters: https://leetcode.com/explore/challenge/card/october-leetcoding-challenge/560/week-2-october-8th-october-14th/3491/
 // 4. Bag of Tokens: https://leetcode.com/explore/challenge/card/october-leetcoding-challenge/562/week-4-october-22nd-october-28th/3506/
 // 5. Stone Game IV: https://leetcode.com/explore/challenge/card/october-leetcoding-challenge/562/week-4-october-22nd-october-28th/3507/
+// 6. Number of Longest Increasing Subsequence: https://leetcode.com/explore/challenge/card/october-leetcoding-challenge/563/week-5-october-29th-october-31st/3513/
 
 // UNDERSTANDING
 
