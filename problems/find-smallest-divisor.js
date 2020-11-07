@@ -1,7 +1,7 @@
 // https://leetcode.com/explore/challenge/card/november-leetcoding-challenge/564/week-1-november-1st-november-7th/3521/
 
 // Naive - Brute Force
-// O(n^2)
+// TC: O(n^2)
 // var smallestDivisor = function (nums, threshold) {
 //     let sum = Number.MAX_SAFE_INTEGER;
 //     let divisor = 1;
@@ -23,6 +23,7 @@
 //     return --divisor;
 // };
 
+// TC: O(log n)
 var smallestDivisor = function (nums, threshold) {
     let low = 1;
     let high = nums[nums.length - 1];
