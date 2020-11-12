@@ -8,6 +8,7 @@
 // 6. Number of Longest Increasing Subsequence: https://leetcode.com/explore/challenge/card/october-leetcoding-challenge/563/week-5-october-29th-october-31st/3513/
 // 7. Minimum Height Trees: https://leetcode.com/explore/challenge/card/november-leetcoding-challenge/564/week-1-november-1st-november-7th/3519/
 // 8. Binary Tree Tilt: https://leetcode.com/explore/challenge/card/november-leetcoding-challenge/565/week-2-november-8th-november-14th/3524/
+// 9. Valid Square: https://leetcode.com/explore/challenge/card/november-leetcoding-challenge/565/week-2-november-8th-november-14th/3527/
 
 // UNDERSTANDING
 
