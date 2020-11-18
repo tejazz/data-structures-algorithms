@@ -10,6 +10,7 @@
 // 8. Binary Tree Tilt: https://leetcode.com/explore/challenge/card/november-leetcoding-challenge/565/week-2-november-8th-november-14th/3524/
 // 9. Poor Pigs: https://leetcode.com/problems/minimum-number-of-steps-to-make-two-strings-anagram/
 // 10. Smallest Range II: https://leetcode.com/problems/smallest-range-ii/
+// 11. Valid Square: https://leetcode.com/explore/challenge/card/november-leetcoding-challenge/565/week-2-november-8th-november-14th/3527/
 
 // UNDERSTANDING
 
