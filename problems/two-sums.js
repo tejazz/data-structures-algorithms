@@ -10,7 +10,6 @@ var twoSum = function (nums, target) {
 
         hashMap[target - nums[i]] = i;
     }
-    console.log(hashMap);
 };
 
 console.log(twoSum([2, 7, 11, 15], 9));   // [0,1]
