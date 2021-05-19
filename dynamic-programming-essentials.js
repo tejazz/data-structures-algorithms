@@ -17,7 +17,7 @@
 // };
 
 // Memoized
-// TC: O(2^n), SC: O(n)
+// TC: O(n), SC: O(n)
 
 // const fib = (n, memo = {}) => {
 //     if (memo[n]) return memo[n];
@@ -30,5 +30,35 @@
 // console.log(fib(50));
 
 // -------------------------
+
+// gridTraveler => Memoization
+
+// Say that you are a traveler on a 2D grid and you begin in top-left corner and your goal is to travel to bottom-right. 
+// You can only move down or right. How many ways can you travel on a grid of m*n?
+
+// General
+// TC: O(2^(n + m)), SC: O(m + n)
+
+// const gridTraveler = (m, n) => {
+//     if (m === 0 || n === 0) return 0;
+//     if (m === 1 && n === 1) return 1;
+
+//     return gridTraveler(m - 1, n) + gridTraveler(m, n - 1); 
+// };
+
+// Memoized
+// TC: O(m*n), SC: O(m + n)
+
+// const gridTraveler = (m, n, memo = {}) => {
+//     let key = `${m},${n}`;
+//     if (memo[key]) return memo[key];
+//     if (m === 0 || n === 0) return 0;
+//     if (m === 1 && n === 1) return 1;
+
+//     memo[key] = gridTraveler(m - 1, n, memo) + gridTraveler(m, n - 1, memo); 
+//     return memo[key];
+// };
+
+// console.log(gridTraveler(18, 18));
 
 
