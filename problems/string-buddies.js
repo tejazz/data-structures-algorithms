@@ -15,8 +15,6 @@ var buddyStrings = function (A, B) {
             s.add(A.charAt(i));
         }
 
-        console.log(s);
-
         return s.size < A.length;
     }
 
